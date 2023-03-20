@@ -16,8 +16,8 @@ const Navbar = () => (
     }}
   >
     <Link to={"/"} style={{ display: "flex", alignItems: "center" }}>
-      <img src={logo} alt="logo" height={45} />
-      <Typography variant="h3" color="white">
+      <img src={logo} alt="logo" height={30} />
+      <Typography variant="h5" color="white">
         DTuber
       </Typography>
     </Link>

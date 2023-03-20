@@ -26,7 +26,7 @@ const VideoCard = ({
     });
   }, [videoId]);
 
-  if (link == null) return "Loading link";
+  // if (link == null) return "Loading link";
   return (
     <Card
       sx={{
