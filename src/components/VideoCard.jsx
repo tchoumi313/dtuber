@@ -1,15 +1,8 @@
 import { Link } from "react-router-dom";
-import {
-  Typography,
-  Card,
-  CardContent,
-  CardMedia,
-  Button,
-} from "@mui/material";
+import { Typography, Card, CardContent, CardMedia } from "@mui/material";
 import { useEffect, useState } from "react";
 import { CheckCircle } from "@mui/icons-material";
 import {
-  demoThumbnailUrl,
   demoVideoTitle,
   demoVideoUrl,
   demoChannelTitle,
@@ -25,19 +18,15 @@ const VideoCard = ({
   },
 }) => {
   const [link, setLink] = useState(null);
-  //const navigate = useNavigate();
+
   useEffect(() => {
     DownloadWithAPI(videoId).then((data) => {
+      //console.log(data);
       setLink(data);
     });
   }, [videoId]);
-  const handleClicked = (e) => {
-    //const link =
-    DownloadWithAPI(videoId);
-    /* e.preventDefault();
-    console.log(link);
-    navigate(`${link}`); */
-  };
+
+  if (link == null) return "Loading link";
   return (
     <Card
       sx={{
@@ -72,10 +61,8 @@ const VideoCard = ({
             <CheckCircle sx={{ fontSize: 12, color: "gray", ml: 2 }} />
           </Typography>
         </Link>
-        <Link to={`${link}`}>
-          <Typography variant="h6" color={"#EE1606EE"}>
-            Download
-          </Typography>
+        <Link to={`${link}`} target="_blank">
+          <Typography color={"#EE1606EE"}> Download</Typography>
         </Link>
       </CardContent>
     </Card>

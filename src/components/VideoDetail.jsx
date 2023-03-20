@@ -13,6 +13,7 @@ const VideoDetail = () => {
   const [videos, setVideos] = useState(null);
   const { id } = useParams();
   const [link, setLink] = useState(null);
+
   //const navigate = useNavigate();
   useEffect(() => {
     DownloadWithAPI(id).then((data) => {
@@ -36,6 +37,8 @@ const VideoDetail = () => {
     snippet: { title, channelId, channelTitle },
     statistics: { viewCount, likeCount },
   } = videoDetail;
+
+  if (link == null) return "Loading link";
   return (
     <Box minHeight={"95vh"}>
       <Stack direction={{ xs: "column", md: "row" }}>
