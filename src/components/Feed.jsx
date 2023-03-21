@@ -32,7 +32,7 @@ const Feed = () => {
           <Typography
             className="copyright"
             variant="body2"
-            sx={{ mt: "1.5", color: "#fff" }}
+            sx={{ mt: "1.5", color: "#fff", padding: "10px" }}
           >
             Copyright 2023 DDTech Art
           </Typography>
